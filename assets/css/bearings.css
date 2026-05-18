@@ -1,0 +1,70 @@
+/* === Bearings Category Page Styles === */
+
+.category-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+}
+
+.category-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.category-header h1 {
+  font-size: 2rem;
+  color: #004080; /* Deep blue for category title */
+  margin-bottom: 15px;
+}
+
+.category-header img {
+  max-width: 280px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.category-header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* === Section Styling === */
+.list-section {
+  margin-top: 30px;
+}
+
+.list-section h2 {
+  font-size: 1.4rem;
+  color: #333;
+  border-bottom: 2px solid #004080;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+/* === Lists === */
+.list-section ul {
+  list-style-type: disc;
+  padding-left: 22px;
+}
+
+.list-section ul li {
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #222;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 600px) {
+  .category-header img {
+    max-width: 200px;
+  }
+  .category-header h1 {
+    font-size: 1.6rem;
+  }
+  .list-section h2 {
+    font-size: 1.2rem;
+  }
+}

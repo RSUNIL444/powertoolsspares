@@ -1,0 +1,142 @@
+/* Footer Styling */
+.site-footer {
+    background-color: #007bff;
+    color: #fff;
+    padding: 40px;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-company {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.footer-company h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.footer-company p {
+    margin: 8px 0;
+    font-size: 0.95em;
+    color: #e0e0e0;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.footer-company a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footer-company a:hover,
+.footer-company a:focus {
+    color: #ffd700;
+}
+
+/* Brands Section */
+.footer-brands {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-brands h4 {
+    margin: 0 0 20px 0;
+    font-size: 1.1em;
+    color: #fff;
+    text-align: center;
+}
+
+.brand-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-logos img {
+    max-width: 70px;
+    max-height: 50px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.brand-logos img:hover,
+.brand-logos img:focus {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Tablet Responsive (768px and below) */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 30px 20px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-company {
+        text-align: center;
+    }
+    
+    .footer-company p {
+        font-size: 0.9em;
+    }
+    
+    .brand-logos {
+        justify-content: center;
+    }
+}
+
+/* Mobile Responsive (576px and below) */
+@media (max-width: 576px) {
+    .site-footer {
+        padding: 20px 15px;
+    }
+    
+    .footer-company h3 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    
+    .footer-company p {
+        font-size: 0.85em;
+        margin: 5px 0;
+    }
+    
+    .footer-brands h4 {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+    
+    .brand-logos {
+        gap: 10px;
+    }
+    
+    .brand-logos img {
+        max-width: 50px;
+        max-height: 40px;
+    }
+}
+

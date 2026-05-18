@@ -1,0 +1,66 @@
+/* === Product Section Wrapper === */
+.product-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* === Section Headings === */
+.product-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #007bff; /* brand highlight */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* === Product Grid === */
+.product-grid {
+  display: grid; /* ✅ ensures responsive layout */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: 50px; /* spacing between sections */
+  justify-content: center;
+}
+
+/* === Product Item Card === */
+.product-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* === Product Images (static size) === */
+.product-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+/* === Product Titles === */
+.product-item h3 {
+  font-size: 1rem;
+  color: #222;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* === Price Range === */
+.price-range {
+  font-size: 14px;
+  color: #007bff; /* brand color for emphasis */
+  font-weight: bold;
+  margin-top: 5px;
+}

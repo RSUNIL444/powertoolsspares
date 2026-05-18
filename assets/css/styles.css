@@ -1,0 +1,251 @@
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.btn-primary {
+  background-color: #fff;
+  color: #007bff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero-image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.cover-item {
+  flex: 1 1 500px;
+  /* allow each item to grow up to 500px */
+  max-width: 600px;
+  /* cap at your PNG width */
+  text-align: center;
+}
+
+.cover-item img {
+  width: 100%;
+  /* fill container */
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  /* center image */
+}
+
+/* Brand text */
+.brand-name {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  margin: 0;
+  opacity: 0;
+}
+
+/* Hero text container */
+.hero-text {
+  max-width: 1200px;
+  /* slightly wider for subtitle */
+  margin: 0 auto 50px auto;
+  /* center block with bottom spacing */
+  text-align: center;
+  /* center align all text */
+  padding: 10px;
+  /* breathing room inside */
+  margin-bottom: 30px;
+}
+
+/* Main title */
+.hero-text h1 {
+  font-size: 3em;
+  /* bold, prominent headline */
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+  /* darker for strong contrast */
+  letter-spacing: 1px;
+  /* subtle spacing for impact */
+  margin-top: 0;
+}
+
+/* Subtitle */
+.hero-text h2 {
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #007bff;
+  /* brand color highlight */
+  line-height: 1.4;
+}
+
+/* Description paragraph */
+.hero-text p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Call-to-action button */
+.hero-text .btn-secondary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero-text .btn-secondary:hover {
+  background-color: #0056b3;
+  /* darker shade on hover */
+}
+
+.hero {
+  padding: 100px 20px 40px;
+}
+
+/* Global Layout Fix for Footer */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content expands to fill space */
+main {
+  flex: 1;
+}
+
+/* Footer pinned at bottom */
+.site-footer {
+  margin-top: auto;   /* pushes footer down */
+}
+
+/* Categories Section */
+.categories {
+  padding: 30px 20px;
+  background-color: #fff;
+  /* clean white background */
+  text-align: center;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* flexible columns */
+  gap: 30px;               /* spacing between cards */
+  justify-content: center; /* center leftover cards */
+  box-sizing: border-box;  /* prevent overflow */
+}
+
+.category-card {
+  width: 100%;             /* fill grid cell */
+  max-width: 300px;        /* cap width */
+  margin: 0;               /* remove auto margins */
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;  /* ensures padding doesn’t add extra width */
+}
+
+
+.category-card img {
+  width: 100%;             /* fill card width */
+  height: 160px;           /* fixed height */
+  object-fit: contain;     /* scale proportionally */
+  display: block;
+  margin: 0 auto 15px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+
+.category-card h3 {
+  margin: 10px 0;
+  color: #007bff;
+}
+
+.category-card p {
+  flex-grow: 1;
+  /* allow text to take available space */
+  margin-bottom: 15px;
+}
+
+.category-card .btn-secondary {
+  align-self: flex-start;
+  /* keep button aligned left */
+  margin-top: auto;
+  /* push button to bottom */
+}
+
+.slideshow {
+  width: 100%;
+  max-width: 800px;
+  /* 👈 controls how wide it can grow */
+  aspect-ratio: 16 / 7;
+  margin: 0 auto;
+  /* 👈 centers it */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Each slide */
+.slide {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Active slide */
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+/* Show text only for active */
+.slide.active .brand-name {
+  opacity: 1;
+}
+
+.slide:first-child {
+  opacity: 1;
+  z-index: 1;
+}

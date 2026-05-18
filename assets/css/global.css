@@ -110,8 +110,11 @@ strong { font-weight: 600; color: var(--color-dark); }
    ================================ */
 
 .back-button {
-  display: inline-block;
-  margin-top: var(--spacing-md);
+  display: inline-block;       /* shrink to content */
+  width: 10%;                 /* prevent full-width */
+  flex: 0 0 auto;              /* stop flex expansion */
+  margin: var(--spacing-md) 0; /* vertical spacing */
+  margin-left: var(--spacing-md); /* left margin */
   background-color: var(--color-primary);
   color: #fff;
   padding: var(--spacing-sm) var(--spacing-md);
@@ -120,11 +123,10 @@ strong { font-weight: 600; color: var(--color-dark); }
   font-weight: bold;
   transition: background-color var(--transition-speed);
 }
+
 .back-button:hover {
   background-color: var(--color-primary-dark);
 }
-
-
 
 /* ================================
    HERO SECTION
@@ -474,4 +476,26 @@ strong { font-weight: 600; color: var(--color-dark); }
         grid-template-columns: 1fr;
         gap: var(--spacing-sm);
     }
+}
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .back-button {
+    margin-left: var(--spacing-sm);   /* smaller left margin */
+    margin-top: var(--spacing-sm);
+    font-size: 0.95rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+/* Mobile (576px and below) */
+@media (max-width: 576px) {
+  .back-button {
+    display: block;                   /* full row */
+    width: 100%;                      /* button spans full width */
+    margin: var(--spacing-sm) 0;      /* vertical spacing only */
+    text-align: center;               /* center text inside button */
+    font-size: 0.9rem;
+    padding: var(--spacing-sm);
+  }
 }

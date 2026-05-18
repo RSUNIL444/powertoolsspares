@@ -41,7 +41,7 @@
 
 /* === Product Images (static size) === */
 .product-item img {
-  width: 200px;
+  width: 180px;
   height: 200px;
   object-fit: contain;
   margin-bottom: 12px;

@@ -1,7 +1,6 @@
 /* ================================
-   GLOBAL STYLES & RESETS
+   GLOBAL STYLES & VARIABLES
    ================================ */
-
 :root {
     --color-primary: #007bff;
     --color-primary-dark: #0056b3;
@@ -40,13 +39,12 @@ body {
 }
 
 main {
-    flex: 1;  /* Flex grow to push footer down */
+    flex: 1; /* pushes footer down */
 }
 
 /* ================================
    ACCESSIBILITY
    ================================ */
-
 .skip-link {
     position: absolute;
     top: -40px;
@@ -57,12 +55,7 @@ main {
     text-decoration: none;
     z-index: 100;
 }
-
-.skip-link:focus {
-    top: 0;
-}
-
-/* Focus states for keyboard navigation */
+.skip-link:focus { top: 0; }
 a:focus, button:focus, input:focus {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
@@ -71,20 +64,16 @@ a:focus, button:focus, input:focus {
 /* ================================
    TYPOGRAPHY
    ================================ */
-
 h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: var(--spacing-lg); color: var(--color-dark); }
 h2 { font-size: 2rem; font-weight: 600; margin-bottom: var(--spacing-lg); color: var(--color-primary); }
 h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: var(--spacing-md); }
 h4 { font-size: 1.2rem; font-weight: 500; margin-bottom: var(--spacing-sm); }
-
 p { margin-bottom: var(--spacing-md); line-height: 1.7; }
-
 strong { font-weight: 600; color: var(--color-dark); }
 
 /* ================================
    BUTTONS
    ================================ */
-
 .btn-primary, .btn-secondary {
     display: inline-block;
     padding: 12px 24px;
@@ -96,43 +85,28 @@ strong { font-weight: 600; color: var(--color-dark); }
     transition: all var(--transition-speed);
     font-size: 1rem;
 }
-
 .btn-primary {
     background-color: #fff;
     color: var(--color-primary);
     border: 2px solid #fff;
 }
-
 .btn-primary:hover, .btn-primary:focus {
     background-color: transparent;
     color: #fff;
 }
-
 .btn-secondary {
     background-color: var(--color-primary);
     color: #fff;
 }
-
 .btn-secondary:hover, .btn-secondary:focus {
     background-color: var(--color-primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* ================================
-   LAYOUT: CONTAINER & GRID
-   ================================ */
-
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* ================================
    HERO SECTION
    ================================ */
-
 .hero-image {
     position: relative;
     width: 100%;
@@ -140,69 +114,87 @@ strong { font-weight: 600; color: var(--color-dark); }
     background-color: #f0f0f0;
     overflow: hidden;
 }
-
 .slideshow {
     position: relative;
     width: 100%;
     height: 100%;
 }
-
 .slide {
     display: none;
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
 }
-
 .slide.active {
     display: block;
     animation: fadeIn 0.5s;
 }
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
 .slide img {
     width: 100%;
-    height: auto;          /* keep aspect ratio */
-    max-height: 100%;      /* prevent overflow */
-    object-fit: contain;   /* show full image without cropping */
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
     display: block;
     margin: 0 auto;
 }
-
 .brand-name {
     position: absolute;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%); /* center horizontally */
-    max-width: 100%;             /* don’t exceed container */
-    width: auto;                 /* shrink to fit content */
+    transform: translateX(-50%);
+    max-width: 100%;
     color: #fff;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0,0,0,0.7);
     padding: 10px 20px;
-    margin: 0;
     text-align: center;
     font-size: 1.3rem;
     font-weight: bold;
-    border-radius: 4px;          /* optional for cleaner look */
+    border-radius: 4px;
 }
 
+/* Optional hero text block (from styles.css) */
+.hero-text {
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+    padding: 10px;
+}
+.hero-text h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #222;
+    letter-spacing: 1px;
+}
+.hero-text h2 {
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--color-primary);
+}
+.hero-text p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #555;
+}
+.hero-text .btn-secondary {
+    padding: 12px 28px;
+    transition: background-color 0.3s ease;
+}
+.hero-text .btn-secondary:hover {
+    background-color: var(--color-primary-dark);
+}
 
 /* ================================
    CATEGORIES GRID
    ================================ */
-
 .categories {
     padding: var(--spacing-lg) var(--spacing-md);
     background-color: #fff;
     text-align: center;
 }
-
 .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -211,12 +203,11 @@ strong { font-weight: 600; color: var(--color-dark); }
     justify-items: center;
     align-items: stretch;
 }
-
 .category-card {
     background: var(--color-light);
     border-radius: 8px;
     padding: var(--spacing-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: all var(--transition-speed);
     display: flex;
     flex-direction: column;
@@ -224,12 +215,10 @@ strong { font-weight: 600; color: var(--color-dark); }
     width: 100%;
     max-width: 300px;
 }
-
 .category-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
-
 .category-card img {
     width: 100%;
     height: 180px;
@@ -238,12 +227,10 @@ strong { font-weight: 600; color: var(--color-dark); }
     border-radius: 6px;
     background-color: #fff;
 }
-
 .category-card h3 {
     color: var(--color-primary);
     margin-bottom: var(--spacing-sm);
 }
-
 .category-card p {
     flex-grow: 1;
     font-size: 0.95rem;

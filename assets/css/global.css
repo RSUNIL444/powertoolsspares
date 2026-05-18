@@ -178,17 +178,20 @@ strong { font-weight: 600; color: var(--color-dark); }
 .brand-name {
     position: absolute;
     bottom: 20px;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%); /* center horizontally */
+    max-width: 100%;             /* don’t exceed container */
+    width: auto;                 /* shrink to fit content */
     color: #fff;
     background: rgba(0, 0, 0, 0.7);
-    padding: 15px;
+    padding: 10px 20px;
     margin: 0;
     text-align: center;
     font-size: 1.3rem;
     font-weight: bold;
-    opacity: 1;
+    border-radius: 4px;          /* optional for cleaner look */
 }
+
 
 /* ================================
    CATEGORIES GRID

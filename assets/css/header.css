@@ -1,25 +1,25 @@
 /* Header */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;   /* logo left, nav + button right */
     align-items: center;
     background-color: #007bff;
     padding: 15px 40px;
     color: #fff;
     margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 20px;
-    position: relative;
+    flex-wrap: nowrap;                /* prevent wrapping on desktop */
+    gap: 0;                           /* remove excess gaps */
 }
 
+
 nav {
-    flex: 1; 
-    display: flex;
-    align-items: center;
     flex: 1;
-    min-width: 300px;
-    gap: 40px;
+    display: flex;
+    justify-content: flex-end;        /* push links to the right */
+    align-items: center;
+    gap: 30px;                        /* balanced spacing */
 }
+
 
 .nav-links {
     list-style: none;
@@ -27,12 +27,6 @@ nav {
     gap: 30px;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.nav-links li {
-    display: flex;
     align-items: center;
 }
 
@@ -40,9 +34,9 @@ nav {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    padding: 5px 0;
+    padding: 8px 0;
     border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .nav-links a:hover,
@@ -50,6 +44,14 @@ nav {
     color: #e0e0e0;
     border-bottom-color: #fff;
 }
+
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
+
 
 .logo {
     font-size: 1.5em;
@@ -111,6 +113,10 @@ nav {
 
 .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.btn-primary {
+    margin-left: 20px; /* separates button from nav links */
 }
 
 
